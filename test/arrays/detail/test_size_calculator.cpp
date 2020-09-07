@@ -18,6 +18,8 @@
 #include <iostream>
 #include <scfd/arrays/detail/size_calculator.h>
 
+#include "gtest/gtest.h"
+
 using namespace scfd::arrays;
 using namespace scfd::arrays::detail;
 

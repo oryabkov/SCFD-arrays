@@ -17,6 +17,8 @@
 
 #include <scfd/arrays/detail/parameter_indexer.h>
 
+#include "gtest/gtest.h"
+
 int main(int argc, char const *argv[])
 {
     access_index<0, 1,1,1>  test;

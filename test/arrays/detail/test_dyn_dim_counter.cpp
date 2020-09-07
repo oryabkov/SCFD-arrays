@@ -18,6 +18,8 @@
 #include <iostream>
 #include <scfd/arrays/detail/dyn_dim_counter.h>
 
+#include "gtest/gtest.h"
+
 using namespace scfd::arrays;
 using namespace scfd::arrays::detail;
 

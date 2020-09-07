@@ -18,6 +18,8 @@
 #include <iostream>
 #include <scfd/arrays/detail/template_indexer.h>
 
+#include "gtest/gtest.h"
+
 using namespace scfd::arrays::detail;
 
 static const int test_Y0 = template_indexer<int, 0,  0,5,1,1,0,0,234,123>::value;

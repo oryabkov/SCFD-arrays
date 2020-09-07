@@ -19,6 +19,8 @@
 #include <iostream>
 #include <scfd/arrays/detail/template_arg_search.h>
 
+#include "gtest/gtest.h"
+
 using namespace scfd::arrays::detail;
 
 /*template<int Sz, int... Dims>

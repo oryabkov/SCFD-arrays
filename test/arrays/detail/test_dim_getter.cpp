@@ -18,20 +18,21 @@
 #include <iostream>
 #include <scfd/arrays/detail/dim_getter.h>
 
+#include "gtest/gtest.h"
+
 using namespace scfd::arrays;
 using namespace scfd::arrays::detail;
 
-int main(int argc, char const *argv[])
+TEST(DetailDimGetterTest, GetMixedTests) 
 {
     scfd::static_vec::vec<int,3>   dyn_sizes = {10,20,30};
-    std::cout << dim_getter<int, 0, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " " 
-              << dim_getter<int, 1, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " "
-              << dim_getter<int, 2, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " "
-              << dim_getter<int, 3, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " "
-              << dim_getter<int, 4, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " "
-              << dim_getter<int, 5, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " " 
-              << dim_getter<int, 6, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " "
-              << dim_getter<int, 7, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes) << " " << std::endl;
 
-    return 0;
+    ASSERT_EQ(dim_getter<int, 0, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 10);
+    ASSERT_EQ(dim_getter<int, 1, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 5);
+    ASSERT_EQ(dim_getter<int, 2, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 1);
+    ASSERT_EQ(dim_getter<int, 3, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 1);
+    ASSERT_EQ(dim_getter<int, 4, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 20);
+    ASSERT_EQ(dim_getter<int, 5, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 30);
+    ASSERT_EQ(dim_getter<int, 6, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 234);
+    ASSERT_EQ(dim_getter<int, 7, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes), 123);
 }
