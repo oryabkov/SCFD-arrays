@@ -19,10 +19,14 @@
 
 #include "gtest/gtest.h"
 
-int main(int argc, char const *argv[])
+TEST(DetailParameterIndexerTest, GetMixedTests) 
 {
-    access_index<0, 1,1,1>  test;
-    test.get(0,0,0,10);
+    /// NOTE template argumnets after the first one are ignored - just therir number is important
+    access_index<0, 1,1,1>  test1;
+    access_index<1, 2,2,1>  test2;
+    access_index<2, 1,3,3>  test3;
 
-    return 0;
+    ASSERT_EQ((test1.get(1,2,6,10)), 1);
+    ASSERT_EQ((test2.get(1,2,6,11)), 2);
+    ASSERT_EQ((test3.get(1,2,6,12)), 6);
 }
