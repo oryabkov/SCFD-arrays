@@ -23,7 +23,7 @@
 using namespace scfd::arrays;
 using namespace scfd::arrays::detail;
 
-template<int Sz, int... Dims>
+/*template<int Sz, int... Dims>
 bool perform_test(int test_n, scfd::static_vec::vec<int,Sz> &dyn_sizes, int correct_aswer)
 {
     int answer = size_calculator<int, Dims...>::get(dyn_sizes);
@@ -33,12 +33,11 @@ bool perform_test(int test_n, scfd::static_vec::vec<int,Sz> &dyn_sizes, int corr
     else 
         std::cout << " FAILED!" << std::endl;
     return answer == correct_aswer;
-}
+}*/
 
-int main(int argc, char const *argv[])
+TEST(DetailSizeCalculatorTest, GetOnlyTest) 
 {
     scfd::static_vec::vec<int,3>   dyn_sizes = {10,20,30};
-    if (!perform_test<3, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>(1, dyn_sizes, 863460000)) return 1;
 
-    return 0;
+    ASSERT_EQ((size_calculator<int, dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::get(dyn_sizes)),863460000);
 }
