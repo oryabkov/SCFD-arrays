@@ -31,16 +31,14 @@ static const int test_Y5 = template_indexer<int, 5,  0,5,1,1,0,0,234,123>::value
 static const int test_Y6 = template_indexer<int, 6,  0,5,1,1,0,0,234,123>::value;
 static const int test_Y7 = template_indexer<int, 7,  0,5,1,1,0,0,234,123>::value;
 
-int main(int argc, char const *argv[])
+TEST(DetailTemplateIndexerTest, ValueMixedTests) 
 {
-    std::cout << test_Y0 << " " << 
-                 test_Y1 << " " << 
-                 test_Y2 << " " << 
-                 test_Y3 << " " << 
-                 test_Y4 << " " << 
-                 test_Y5 << " " << 
-                 test_Y6 << " " << 
-                 test_Y7 << " " << std::endl;
-
-    return 0;
+    ASSERT_EQ(test_Y0, 0);
+    ASSERT_EQ(test_Y1, 5);
+    ASSERT_EQ(test_Y2, 1);
+    ASSERT_EQ(test_Y3, 1);
+    ASSERT_EQ(test_Y4, 0);
+    ASSERT_EQ(test_Y5, 0);
+    ASSERT_EQ(test_Y6, 234);
+    ASSERT_EQ(test_Y7, 123);
 }
