@@ -35,9 +35,7 @@ bool perform_test(int test_n, static_vec::vec<int,Sz> &dyn_sizes, int correct_as
     return answer == correct_aswer;
 }*/
 
-int main(int argc, char const *argv[])
+TEST(DetailTemplateArgSearchTest, ValueOneTest) 
 {
-    std::cout << template_arg_search<int, double, int,int,double>::value << std::endl;
-
-    return 0;
+    ASSERT_EQ((template_arg_search<int, double, int,int,double>::value),2);
 }
