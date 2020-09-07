@@ -33,17 +33,15 @@ static const int test_X6 = dyn_dim_counter<int, 6,  dyn_dim,5,1,1,dyn_dim,dyn_di
 static const int test_X7 = dyn_dim_counter<int, 7,  dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::value;
 static const int test_X8 = dyn_dim_counter<int, 8,  dyn_dim,5,1,1,dyn_dim,dyn_dim,234,123>::value;
 
-int main(int argc, char const *argv[])
+TEST(DynDimCounterTest, ValueMixedTests)
 {
-    std::cout << test_X0 << " " << 
-                 test_X1 << " " << 
-                 test_X2 << " " << 
-                 test_X3 << " " << 
-                 test_X4 << " " << 
-                 test_X5 << " " << 
-                 test_X6 << " " << 
-                 test_X7 << " " <<
-                 test_X8 << " " << std::endl;
-
-    return 0;
+    ASSERT_EQ(test_X0, 0);
+    ASSERT_EQ(test_X1, 1);
+    ASSERT_EQ(test_X2, 1);
+    ASSERT_EQ(test_X3, 1);
+    ASSERT_EQ(test_X4, 1);
+    ASSERT_EQ(test_X5, 2);
+    ASSERT_EQ(test_X6, 3);
+    ASSERT_EQ(test_X7, 3);
+    ASSERT_EQ(test_X8, 3);
 }
