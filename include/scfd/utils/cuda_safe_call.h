@@ -19,6 +19,7 @@
 
 #include <stdexcept>
 #include <string>
+#include <cuda_runtime.h>
 
 #define __STR_HELPER(x) #x
 #define __STR(x) __STR_HELPER(x)

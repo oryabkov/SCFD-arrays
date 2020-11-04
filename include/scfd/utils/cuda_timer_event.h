@@ -19,6 +19,7 @@
 
 #include <cassert>
 #include <stdexcept>
+#include <cuda_runtime.h>
 #include "cuda_safe_call.h"
 #include "timer_event.h"
 
