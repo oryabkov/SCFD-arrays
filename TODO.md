@@ -42,3 +42,4 @@
 7) The same problem as in 6) we have in tensor_array_nd_visible::init, when 
    init_by_ throws, visible arrays stays in incorrect state (again,
    array_ is inited and *this(host array) is not).
+8) SCFD_ARRAYS_ENABLE_INDEX_SHIFT must be 0/1 not defined/undefined
